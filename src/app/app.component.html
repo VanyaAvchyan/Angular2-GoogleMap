@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>{{title}}</h1>
+    <div class="row">
+        <div class="col-md-8">
+            <sebm-google-map #map [latitude]="lat" [longitude]="lng">
+                <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+                <app-map-content></app-map-content>
+            </sebm-google-map>
+        </div>
+        <div class="col-md-4">
+            <h2>Map selection tool</h2>
+           <form>
+                <div class="form-group">
+                    <label for="serachAddress">Address</label>
+                    <input
+                            #serachAddress
+                            id="serachAddress"
+                            type="text"
+                            class="form-control"
+                            autocorrect="off"
+                            autocapitalize="off"
+                            spellcheck="off"
+                            placeholder="Enter address"
+                    >
+                </div>
+                <button type="submit" class="btn btn-primary" (click)='confirmSelection()'>Confirm selection</button>
+                <button type="reset" class="btn btn-primary">Reset selection</button>
+            </form>
+        </div>
+    </div>
+</div>
